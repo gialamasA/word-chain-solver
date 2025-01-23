@@ -1,0 +1,15 @@
+{
+  "name": "word-chain-project",
+  "version": "1.0.0",
+  "description": "Word chain project using MongoDB and Node.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "seed": "node migrations/seedRedis.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-validator": "^7.2.1",
+    "redis": "^4.7.0"
+  }
+}
