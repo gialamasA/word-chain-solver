@@ -3,24 +3,28 @@ const { body } = require('express-validator');
 exports.validateWordChainRequest = [
   // Validation for "start" field
   body('start')
-    .trim()
     .notEmpty()
     .withMessage('The "start" word is required.')
     .isString()
     .withMessage('The "start" word must be a string.')
+    .trim()
     .isLength({ min: 1 })
     .withMessage('The "start" word cannot be empty.')
+    .matches(/^[a-zA-Z]+$/)
+    .withMessage('The "start" word must contain only letters.')
     .toLowerCase(),
 
   // Validation for "target" field
   body('target')
-    .trim()
     .notEmpty()
     .withMessage('The "target" word is required.')
     .isString()
     .withMessage('The "target" word must be a string.')
+    .trim()
     .isLength({ min: 1 })
     .withMessage('The "target" word cannot be empty.')
+    .matches(/^[a-zA-Z]+$/)
+    .withMessage('The "target" word must contain only letters.')
     .toLowerCase(),
 
   // Ensure "start" and "target" have the same length

@@ -10,6 +10,7 @@ This is an HTTP service that solves word-chain puzzles. Given a start word and a
 4. [Running the Application](#running-the-application)
 5. [API Endpoint](#api-endpoint)
 6. [Logging](#logging)
+7. [Testing](#testing)
 
 ## Features
 
@@ -69,7 +70,7 @@ Once the containers are running, the API will be available at `http://localhost:
   ```json
   {
   "success": true,
-  "chain": ["cold", "cord", "card", "ward", "warm"]
+  "chain": ["cold", "wold", "word", "ward", "warm"]
   }
   ```
 
@@ -93,3 +94,5 @@ The service logs incoming requests to the console and stores detailed logs in Re
     LRANGE logs 0 -1
     ```
 
+### Testing
+I have included a Postman collection named `word-chain-solver.postman_collection.json` in this repository that can be used to test different cases. Simply import the collection into Postman and run the requests to verify functionality.
